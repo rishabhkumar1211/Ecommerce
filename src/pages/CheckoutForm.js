@@ -61,7 +61,7 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: `https://localhost:3000/order-success/${currentOrder.id}`,
+        return_url: `http://localhost:3000/order-success/${currentOrder.id}`,
       },
     });
 
@@ -74,6 +74,7 @@ export default function CheckoutForm() {
       setMessage(error.message);
     } else {
       setMessage("An unexpected error occurred.");
+      console.log("message", error);
     }
 
     setIsLoading(false);
